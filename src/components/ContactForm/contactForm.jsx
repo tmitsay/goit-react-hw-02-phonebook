@@ -30,10 +30,11 @@ export class ContactForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handelSubmit}>
-        <label htmlFor={this.nameInputId}>
+      <form className={css.form} onSubmit={this.handelSubmit}>
+        <label className={css.label} htmlFor={this.nameInputId}>
           Name
           <input
+            className={css.input_form}
             type="text"
             onChange={this.handelChange}
             name="name"
@@ -41,9 +42,10 @@ export class ContactForm extends Component {
             required
           />
         </label>
-        <label htmlFor={this.numberInputId}>
+        <label className={css.label} htmlFor={this.numberInputId}>
           Number
           <input
+            className={css.input_form}
             type="tel"
             onChange={this.handelChange}
             name="number"
@@ -52,7 +54,9 @@ export class ContactForm extends Component {
           />
         </label>
 
-        <button type="submit">Add contact</button>
+        <button className={css.btn} type="submit">
+          Add contact
+        </button>
       </form>
     );
   }
