@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import css from './filter.module.css';
 
 export const Filter = ({ value, onChangeFilter }) => {
