@@ -35,7 +35,7 @@ export class App extends Component {
     );
   };
 
-  changeFilter = event => {
+  onChangeFilter = event => {
     this.setState({ filter: event.currentTarget.value });
   };
 
@@ -59,7 +59,11 @@ export class App extends Component {
 
         <h2>Contacts</h2>
 
-        <Filter value={filter} onChangeFilter={this.changeFilter} />
+        {this.state.contacts.length > 0 ? (
+          <Filter value={filter} onChangeFilter={this.onChangeFilter} />
+        ) : (
+          <h2>Your phonebook is empty</h2>
+        )}
 
         <ContactList
           contacts={visibleContacts}
